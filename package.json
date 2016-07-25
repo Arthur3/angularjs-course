@@ -1,0 +1,25 @@
+{
+  "name": "angularjs-course",
+  "version": "1.0.0",
+  "description": "http://learn.javascript.ru/courses/angular",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arthur3/angularjs-course.git"
+  },
+  "author": "Arthur Kashaev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arthur3/angularjs-course/issues"
+  },
+  "homepage": "https://github.com/Arthur3/angularjs-course#readme"
+}
