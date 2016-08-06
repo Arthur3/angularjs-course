@@ -2,7 +2,7 @@
 
 export default app => {
 
-	app.component('header', {
+	app.component('mbHeader', {
 		template: require('./header.html')
 	});
 
