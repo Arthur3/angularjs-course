@@ -1,25 +1,41 @@
 {
   "name": "angularjs-course",
   "version": "1.0.0",
-  "description": "http://learn.javascript.ru/courses/angular",
-  "main": "webpack.config.js",
-  "dependencies": {
-    "webpack": "^1.13.1"
-  },
-  "devDependencies": {
-    "webpack": "^1.13.1"
-  },
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node_modules/.bin/webpack-dev-server --content-base app"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Arthur3/angularjs-course.git"
   },
-  "author": "Arthur Kashaev",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Arthur3/angularjs-course/issues"
   },
-  "homepage": "https://github.com/Arthur3/angularjs-course#readme"
+  "homepage": "https://github.com/Arthur3/angularjs-course#readme",
+  "devDependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-stage-2": "^6.13.0",
+    "css-loader": "^0.23.1",
+    "node-sass": "^3.8.0",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1"
+  },
+  "peerDependencies": {
+    "webpack": "^1.13.1",
+    "node-sass": "^3.8.0"
+  }
 }
