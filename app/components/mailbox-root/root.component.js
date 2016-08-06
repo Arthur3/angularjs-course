@@ -4,9 +4,12 @@ import route from './root.route';
 
 import header from './header/header.component';
 
+import controlbar from './controlbar/controlbar.component';
+
 export default app => {
-	/* desp */
+	/* deps */
 	header(app);
+	controlbar(app);
 
 	/* component */
 	require('./root.scss');
