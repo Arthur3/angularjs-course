@@ -2,37 +2,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-
-/* Header */
-header {
-  background-color: #f1f1f1;
-  padding: 13px 0;
-}
-
-.logo {
-  padding: 0 30px;
-}
-
-.search-bar {
-  padding-left: 0;
-  position: relative;
-}
-
-.btn-main {
-  background-color: #4285f4;
-  color: #fff;
-  padding-right: 25px;
-  padding-left: 25px;
-}
-
-.arrow {
-  color: #c1c1c1;
-  position: absolute;
-  right: 90px;
-  top: 15px;
-  z-index: 9;
-}
-
 .profile-icons {
   margin-bottom: 0;
 }
