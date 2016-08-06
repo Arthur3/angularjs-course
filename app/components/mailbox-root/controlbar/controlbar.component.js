@@ -1,6 +1,10 @@
 'use strict';
 
+import menu from './mailbox-menu/menu.component';
+
 export default app => {
+	
+	menu(app);
 
 	require('./controlbar.scss');
 
