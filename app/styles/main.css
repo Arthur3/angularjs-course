@@ -12,43 +12,6 @@ body {
   text-align: center;
 }
 
-
-/* Control bar */
-.control-bar {
-  border-bottom: 1px solid #f1f1f1;
-}
-
-.menu {
-  font-size: 19px;
-  color: #d14836;
-  padding: 10px 30px;
-}
-
-.controls {
-  padding: 10px 0;
-}
-
-.control-list {
-  margin-bottom: 0;
-}
-
-.btn-control {
-  background-color: #f1f1f1;
-  border-color: #d1d1d1;
-  width: 72px;
-  height: 27px;
-  padding: 0;
-}
-
-input.mail-select {
-  margin: 0;
-}
-
-.text-btn {
-  font-size: 11px;
-}
-
-
 /* Mail */
 .sidebar {
   padding-left: 30px;
