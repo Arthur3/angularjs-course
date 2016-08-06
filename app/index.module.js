@@ -6,6 +6,7 @@ import appComponents from './components';
 import uiRouter from 'angular-ui-router';
 
 import 'bootstrap-loader';
+import './styles/main.css';
 
 const app = angular.module('mailbox', [uiRouter]);
 
