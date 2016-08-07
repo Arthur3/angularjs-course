@@ -9,10 +9,10 @@ export default app => {
 		}
 
 		loadMailBoxes () {
-			return this.$http.get(this.baseUrl);
+			return this.$http.get(this.baseUrl + '/mailboxes');
 		}
 	}
 
-	app.service('LettersService', MailboxService);
+	app.service('MailboxService', MailboxService);
 
 }
