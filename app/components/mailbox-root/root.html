@@ -3,7 +3,10 @@
 <div class="mail row">
     <sidebar items="$ctrl.mailboxes"></sidebar>
     <div class="inbox col-sm-10">
-          <ul class="list-unstyled"></ul>
+          <ul class="list-unstyled">
+          	<letter ng-repeat="letter in $ctrl.letters" item="letter">
+          		<input type="checkbox" ng-model="$ctrl.selection[letter._id]">
+          	</letter>
+          </ul>
     </div>
 </div>
-<!-- mail -->

@@ -1,0 +1,19 @@
+<li class="email-item row unread">
+    <div class="people col-sm-3">
+        <ul class="mail-icons list-inline">
+            <li><ng-transclude></ng-transclude></li>
+            <li><span class="glyphicon glyphicon-star-empty"></span></li>
+            <li><span class="glyphicon glyphicon-cutlery"></span></li>
+        </ul>
+        <span class="people-names" ng-bind="$ctrl.letter.to"></span>
+    </div>
+    <div class="message col-sm-7">
+        <div class="clipper">
+            <h3 ng-bind="$ctrl.letter.subject"></h3> -
+            <p ng-bind="$ctrl.letter.body"></p>
+        </div>
+    </div>
+    <div class="date col-sm-2">
+        <date class="pull-right">11:27 a.m.</date>
+    </div>
+</li>

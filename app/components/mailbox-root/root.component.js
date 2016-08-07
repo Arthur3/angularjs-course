@@ -8,6 +8,8 @@ import controlbar from './controlbar/controlbar.component';
 
 import sidebar from './sidebar/sidebar.component';
 
+import letter from './letter/letter.component';
+
 import mailboxService from './mailbox.service';
 
 export default app => {
@@ -15,6 +17,7 @@ export default app => {
 	header(app);
 	controlbar(app);
 	sidebar(app);
+	letter(app);
 
 	/* component */
 	require('./root.scss');
@@ -27,6 +30,11 @@ export default app => {
 			mailboxes: '<'
 		},
 		controller: [function () {
+
+			this.selection = {};
+
+			this.letters = [{_id: '123', body: '123', to: '123', 'subject': '123'}];
+
 		}]
 	});
 }
