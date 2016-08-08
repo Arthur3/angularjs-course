@@ -2,7 +2,8 @@
 
 export default app => {
 	app.config(($urlRouterProvider, $compileProvider) => {
-		$urlRouterProvider.otherwise('/');
+		$urlRouterProvider.when('/', '/mailbox');
+		$urlRouterProvider.otherwise('/mailbox');
 		$compileProvider.debugInfoEnabled(true);
 	});
 }
