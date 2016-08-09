@@ -15,6 +15,10 @@ export default app => {
 				// active, pending
 				return {};
 			}
+
+			this.getStateItemName = item => {
+				return item.title.toLowerCase().replace(' ', '_');
+			}
 		}]
 	})
 
