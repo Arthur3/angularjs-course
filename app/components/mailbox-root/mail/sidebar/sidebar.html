@@ -1,11 +1,12 @@
 <div class="sidebar col-sm-2">
     <button class="compose btn btn-danger">Compose</button>
     <ul class="inbox-sections list-unstyled">
-        <li ng-repeat="menuItem in ::$ctrl.items" ng-class="$ctrl.itemClass(menuItem)">
+        <li ng-repeat="menuItem in ::$ctrl.items">
         	<a 
         		ui-sref="index.mailbox.box({ boxName: $ctrl.getStateItemName(menuItem), boxID: menuItem._id })" 
         		ng-bind="menuItem.title"
-        		ui-sref-active="active"></a>
+        		ui-sref-active="active">
+        	</a>
         </li>
     </ul>
 </div>

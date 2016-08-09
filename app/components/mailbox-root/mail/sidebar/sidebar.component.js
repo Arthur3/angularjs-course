@@ -9,15 +9,14 @@ export default app => {
 		bindings: {
 			items: '<'
 		},
-		controller: [function () {
-			this.itemClass = function () {
-				// TODO
-				// active, pending
-				return {};
-			}
-
+		controller: ['$state', function ($state) {
 			this.getStateItemName = item => {
 				return item.title.toLowerCase().replace(' ', '_');
+			}
+
+			if (this.items.length) {
+				let item = this.items[0];
+				$state.go('index.mailbox.box', { boxName: this.getStateItemName(item), boxID: item._id });
 			}
 		}]
 	})
