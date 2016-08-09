@@ -17,11 +17,11 @@ export default app => {
 		bindings: {
 			letters: '<'
 		},
-		controller: function () {
+		controller: ['MaillistService', function (MaillistService) {
 
-			this.selection = {};
+			this.selection = MaillistService.getSelection();
 			
-		}
+		}]
 	});
 
 }

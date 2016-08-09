@@ -2,6 +2,8 @@
 
 import route from './mail.route';
 
+import maillistService from './maillist.service';
+
 import controlbar from './controlbar/controlbar.component';
 
 import sidebar from './sidebar/sidebar.component';
@@ -12,6 +14,7 @@ import lettersList from './letters-list/list.component';
 export default app => {
 
 	route(app);
+	maillistService(app);
 
 	controlbar(app);
 	sidebar(app);
@@ -24,12 +27,12 @@ export default app => {
 		bindings: {
 			mailboxes: '<'
 		},
-		controller: [function () {
-			this.selection = {};
+		controller: ['MaillistService', function (MaillistService) {
 
 			this.togglePick = function (val) {
-				console.log('toggle pick call', val)
+				MaillistService.toggleAll(val);
 			};
+
 		}]
 	});
 

@@ -11,15 +11,7 @@ export default app => {
 			},
 			template: `<letters-list letters="letters"></letters-list>`,
 			resolve: {
-				letters: ['MailboxService', '$stateParams', '$state', function (MailboxService, $stateParams, $state) {
-					if(!$stateParams.boxID) {
-						$state.go('index.mailbox');
-					} else {
-						return MailboxService.loadLetters($stateParams.boxID).then(function (resp) {
-							return resp.data;
-						});
-					}
-				}]
+				letters: ['MailboxService', '$stateParams', '$state', 'MaillistService', lettersResolve]
 			},
 			controller: ['$scope', 'letters', function ($scope, letters) {
 				$scope.letters = letters;
@@ -27,6 +19,20 @@ export default app => {
 		});
 
 	});
+
+	function lettersResolve (MailboxService, $stateParams, $state, MaillistService) {
+		if(!$stateParams.boxID) {
+			$state.go('index.mailbox');
+		} else {
+			return MailboxService.loadLetters($stateParams.boxID).then(function (resp) {
+				let letters = resp.data;
+
+				MaillistService.initSelection(letters.map(l => l._id));
+				
+				return letters;
+			});
+		}
+	}
 
 
 }
