@@ -9,7 +9,11 @@ export default app => {
 	require('./controlbar.scss');
 
 	app.component('controlbar', {
-		template: require('./controlbar.html')
+		template: require('./controlbar.html'),
+		bindings: {
+			togglePick: '&'
+		},
+		controller: function () {}
 	});
 
 }

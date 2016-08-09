@@ -1,6 +1,8 @@
 <div class="sidebar col-sm-2">
     <button class="compose btn btn-danger">Compose</button>
     <ul class="inbox-sections list-unstyled">
-        <li ng-repeat="menuItem in ::$ctrl.items" ng-class="$ctrl.itemClass(menuItem)" ng-bind="menuItem.title"></li>
+        <li ng-repeat="menuItem in ::$ctrl.items" ng-class="$ctrl.itemClass(menuItem)">
+        	<a href="" ng-bind="menuItem.title"></a>
+        </li>
     </ul>
 </div>

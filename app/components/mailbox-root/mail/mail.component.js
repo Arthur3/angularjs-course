@@ -28,6 +28,11 @@ export default app => {
 			this.selection = {};
 
 			this.letters = [{_id: '123', body: '123', to: '123', 'subject': '123'}];
+
+
+			this.togglePick = function (val) {
+				console.log('toggle pick call', val)
+			};
 		}]
 	});
 

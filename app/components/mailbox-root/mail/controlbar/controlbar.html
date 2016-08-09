@@ -4,7 +4,7 @@
         <ul class="control-list list-inline">
             <li>
                 <button class="btn btn-control">
-                    <input type="checkbox" class="mail-select">
+                    <input type="checkbox" class="mail-select" ng-model="$ctrl.pickAll" ng-change="$ctrl.togglePick({ value: $ctrl.pickAll })">
                     <span class="caret"></span>
                 </button>
             </li>

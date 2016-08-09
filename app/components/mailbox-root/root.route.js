@@ -5,7 +5,8 @@ export default app => {
 
 		$stateProvider.state('index', {
 			url: '/',
-			template: '<mailbox-root></mailbox-root>'
+			template: '<mailbox-root></mailbox-root>',
+			abstract: true
 		});
 		
 	});
