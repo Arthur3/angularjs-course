@@ -9,9 +9,13 @@ export default app => {
 	profile(app);
 
 	require('./header.scss');
+	let googleImgPath = require('./google.png');
 
 	app.component('mbHeader', {
-		template: require('./header.html')
+		template: require('./header.html'),
+		controller: function () {
+			this.googleImg = googleImgPath;
+		}
 	});
 
 }
