@@ -6,6 +6,6 @@ export default app => {
 		$urlRouterProvider.when('/', '/mailbox');
 		$urlRouterProvider.otherwise('/mailbox');
 
-		$compileProvider.debugInfoEnabled(true);
+		$compileProvider.debugInfoEnabled(!IS_PROD);
 	});
 }

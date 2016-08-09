@@ -16,6 +16,7 @@ export default app => {
 
 	/* component */
 	require('./root.scss');
+
 	route(app);
 	mailboxService(app);
 

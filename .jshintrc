@@ -3,6 +3,7 @@
   "node": true,
   "globals": {
     "angular": true,
-    "console": true
+    "console": true,
+    "IS_PROD": true
   }
 }

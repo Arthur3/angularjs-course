@@ -17,11 +17,11 @@ export default app => {
 		bindings: {
 			letters: '<'
 		},
-		controller: ['MaillistService', function (MaillistService) {
+		controller: /*@ngInject*/ function (MaillistService) {
 
 			this.selection = MaillistService.getSelection();
 			
-		}]
+		}
 	});
 
 }
