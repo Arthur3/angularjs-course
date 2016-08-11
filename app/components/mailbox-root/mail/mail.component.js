@@ -27,13 +27,19 @@ export default app => {
 		bindings: {
 			mailboxes: '<'
 		},
-		controller: ['MaillistService', function (MaillistService) {
+		controller: /*@ngInject*/ function (MaillistService, $state, $stateParams) {
 
 			this.togglePick = function (val) {
 				MaillistService.toggleAll(val);
 			};
 
-		}]
+			this.refreshList = function () {
+				if($state.is('index.mailbox.box')) {
+					$state.reload($state.current.name);
+				}
+			};
+
+		}
 	});
 
 }

@@ -11,7 +11,8 @@ export default app => {
 	app.component('controlbar', {
 		template: require('./controlbar.html'),
 		bindings: {
-			togglePick: '&'
+			togglePick: '&',
+			refresh: '&'
 		},
 		controller: function () {}
 	});
