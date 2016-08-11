@@ -1,6 +1,8 @@
 'use strict';
 
-const webpack = require('webpack');
+const 
+	webpack = require('webpack'),
+	CleanWebpackPlugin = require('clean-webpack-plugin');
 
 let config = {
 	context: __dirname + '/app',
@@ -29,7 +31,14 @@ let config = {
 
 if (process.env.NODE_ENV == 'production') {
 	config.output.path = __dirname + '/dist';
-	config.plugins.push(new webpack.optimize.UglifyJsPlugin());
+	config.plugins.push(
+		new CleanWebpackPlugin(['dist'], {
+	    	root: __dirname,
+	    	verbose: true, 
+	    	dry: false
+	    }),
+		new webpack.optimize.UglifyJsPlugin()
+	);
 	config.devtool = 'source-map';
 }
 
