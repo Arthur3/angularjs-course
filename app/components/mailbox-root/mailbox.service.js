@@ -29,6 +29,10 @@ export default app => {
 				}
 			})
 		}
+
+		loadLetterDetails (letterID) {
+			return this.$http.get(this.baseUrl + '/letters/' + letterID);
+		}
 	}
 
 	app.service('MailboxService', MailboxService);

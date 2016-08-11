@@ -1,7 +1,7 @@
-<li class="email-item row unread">
+<li class="email-item row unread" ng-click="$ctrl.showDetails()">
     <div class="people col-sm-3">
         <ul class="mail-icons list-inline">
-            <li><ng-transclude></ng-transclude></li>
+            <li ng-click="$event.stopPropagation()"><ng-transclude></ng-transclude></li>
             <li><span class="glyphicon glyphicon-star-empty"></span></li>
             <li><span class="glyphicon glyphicon-cutlery"></span></li>
         </ul>
