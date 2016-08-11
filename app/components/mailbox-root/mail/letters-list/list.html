@@ -1,5 +1,8 @@
-<ul class="list-unstyled">
+<ul class="list-unstyled" ng-if="$ctrl.letters.length">
     <letter ng-repeat="letter in $ctrl.letters" item="letter">
     	<input type="checkbox" ng-model="$ctrl.selection[letter._id]">
     </letter>
 </ul>
+<p class="text-center no-letters" ng-if="!$ctrl.letters.length">
+	<span class="glyphicon glyphicon-search"></span> Letters not found.
+</p>
