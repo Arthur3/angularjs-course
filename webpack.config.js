@@ -22,6 +22,7 @@ let config = {
 			{ test: /\.scss$/, loader: 'style!css!sass', exclude: /node_modules/ },
 			{ test: /\.(woff2?|svg)$/, loader: 'url?limit=10000' },
     		{ test: /\.(ttf|eot|png|jpg)$/, loader: 'file' },
+    		{ test: /\.ico$/, loader: 'file?name=[name].[ext]' },
 		]
 	}
 }

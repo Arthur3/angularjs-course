@@ -18,3 +18,5 @@ const app = angular.module('mailbox', [uiRouter, dropdown]);
 
 config(app);
 appComponents(app);
+
+require('./favicon.ico');
