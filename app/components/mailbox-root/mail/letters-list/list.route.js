@@ -24,8 +24,7 @@ export default app => {
 		if(!$stateParams.boxID) {
 			$state.go('index.mailbox');
 		} else {
-			return MailboxService.loadLetters($stateParams.boxID).then(function (resp) {
-				let letters = resp.data;
+			return MailboxService.loadLetters($stateParams.boxID).then(function (letters) {
 
 				MaillistService.initSelection(letters.map(l => l._id));
 				
