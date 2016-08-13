@@ -4,12 +4,19 @@ export default app => {
 
 	class MailboxService {
 		constructor ($http) {
-			this.$http = $http;
-			this.baseUrl = ' http://test-api.javascript.ru/v1/artur3';
+			this.$http 		= $http;
+			this.baseUrl 	= ' http://test-api.javascript.ru/v1/artur3';
+			this.mailboxes 	= [];
+		}
+
+		getCachaedMailboxes () {
+			return this.mailboxes;
 		}
 
 		loadMailBoxes () {
-			return this.$http.get(this.baseUrl + '/mailboxes');
+			return this.$http.get(this.baseUrl + '/mailboxes').then(resp => {
+				return (this.mailboxes = resp.data.sort((boxA, boxB) => (boxA._id > boxB._id)));
+			});
 		}
 
 		loadLetters (boxID) {

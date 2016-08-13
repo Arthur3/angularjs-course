@@ -35,7 +35,7 @@ export default app => {
 
 			IDs.forEach(id => {
 				this.selection[id] = false;
-			})
+			});
 		}
 	}
 
