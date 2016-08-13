@@ -13,10 +13,31 @@ export default app => {
 			return this.mailboxes;
 		}
 
+		getBoxUrlName (title) {
+			return title.toLowerCase().replace(' ', '_');
+		}
+
 		loadMailBoxes () {
 			return this.$http.get(this.baseUrl + '/mailboxes').then(resp => {
-				return (this.mailboxes = resp.data.sort((boxA, boxB) => (boxA._id > boxB._id)));
+				this.mailboxes = resp.data.sort((boxA, boxB) => (boxA._id > boxB._id));
+
+				this.mailboxes.map(box => {
+					box.urlName = this.getBoxUrlName(box.title);
+					return box;
+				});
+
+				return this.mailboxes;
 			});
+		}
+
+		findBoxIDByName (urlName) {
+			for (let box of this.mailboxes) {
+				if (this.getBoxUrlName(box.title) == urlName) {
+					return box._id
+				}
+			}
+
+			return null;
 		}
 
 		loadLetters (boxID) {

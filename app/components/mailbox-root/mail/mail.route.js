@@ -12,9 +12,9 @@ export default app => {
 					return MailboxService.loadMailBoxes();
 				}]
 			},
-			controller: ['$scope', 'mailboxes', function ($scope, mailboxes) {
+			controller: /*@ngInject*/ function ($scope, mailboxes) {
 				$scope.mailboxes = mailboxes;
-			}]
+			}
 		});
 
 	});

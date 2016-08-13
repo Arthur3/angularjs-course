@@ -21,10 +21,14 @@ export default app => {
 	});
 
 	function lettersResolve (MailboxService, $stateParams, $state, MaillistService) {
-		if(!$stateParams.boxID) {
+		let boxID = $stateParams.boxID || MailboxService.findBoxIDByName($stateParams.boxName);
+
+		$stateParams.boxID = boxID;
+
+		if(!boxID) {
 			$state.go('index.mailbox');
 		} else {
-			return MailboxService.loadLetters($stateParams.boxID).then(function (letters) {
+			return MailboxService.loadLetters(boxID).then(function (letters) {
 
 				MaillistService.initSelection(letters.map(l => l._id));
 				
@@ -32,6 +36,4 @@ export default app => {
 			});
 		}
 	}
-
-
 }

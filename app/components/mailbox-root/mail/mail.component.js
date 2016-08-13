@@ -38,7 +38,6 @@ export default app => {
 					$state.reload($state.current.name);
 				}
 			};
-
 		}
 	});
 

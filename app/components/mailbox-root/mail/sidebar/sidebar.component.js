@@ -10,14 +10,12 @@ export default app => {
 			items: '<'
 		},
 		controller: ['$state', function ($state) {
-			this.getStateItemName = item => {
-				return item.title.toLowerCase().replace(' ', '_');
-			}
 
 			if (this.items.length && !$state.is('index.mailbox.letter')) {
 				let item = this.items[0];
-				$state.go('index.mailbox.box', { boxName: this.getStateItemName(item), boxID: item._id });
+				$state.go('index.mailbox.box', { boxName: item.urlName, boxID: item._id });
 			}
+			
 		}]
 	})
 

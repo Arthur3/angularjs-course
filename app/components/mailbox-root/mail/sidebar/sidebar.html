@@ -3,7 +3,7 @@
     <ul class="inbox-sections list-unstyled">
         <li ng-repeat="menuItem in ::$ctrl.items">
         	<a 
-        		ui-sref="index.mailbox.box({ boxName: $ctrl.getStateItemName(menuItem), boxID: menuItem._id })" 
+        		ui-sref="index.mailbox.box({ boxName: menuItem.urlName, boxID: menuItem._id })" 
         		ng-bind="menuItem.title"
         		ui-sref-active="active">
         	</a>
