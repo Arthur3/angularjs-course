@@ -11,10 +11,16 @@ export default app => {
 	app.component('controlbar', {
 		template: require('./controlbar.html'),
 		bindings: {
-			togglePick: '&',
-			refresh: '&'
+			togglePick 		: '&',
+			refresh 		: '&'
 		},
-		controller: function () {}
+		controller: /*@ngInject*/ function (MaillistService) {
+
+			MaillistService.registerInitHandler(() => {
+				this.pickAll = false;
+			});
+
+		}
 	});
 
 }

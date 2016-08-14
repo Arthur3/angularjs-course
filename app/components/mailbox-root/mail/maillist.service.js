@@ -4,8 +4,9 @@ export default app => {
 
 	class MaillistService {
 		constructor ($log) {
-			this.$log 		= $log;
-			this.selection 	= {};
+			this.$log 				= $log;
+			this.selection 			= {};
+			this.initEventHandlers 	= [];
 		}
 
 		getSelection () {
@@ -36,6 +37,21 @@ export default app => {
 			IDs.forEach(id => {
 				this.selection[id] = false;
 			});
+
+			this.initEventHandlers.forEach(handler => {
+				if (angular.isFunction(handler)) {
+					handler();
+				}
+			})
+		}
+
+		registerInitHandler (handler) {
+			
+			if (!(handler && angular.isFunction(handler))) {
+				throw new Error('handler must be a function');
+			}
+
+			this.initEventHandlers.push(handler);
 		}
 	}
 
