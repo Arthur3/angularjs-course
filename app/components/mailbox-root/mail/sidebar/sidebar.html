@@ -5,7 +5,7 @@
         	<a 
         		ui-sref="index.mailbox.box({ boxName: menuItem.urlName, boxID: menuItem._id })" 
         		ng-bind="menuItem.title"
-        		ui-sref-active="active">
+        		ng-class="$ctrl.itemClass(menuItem)">
         	</a>
         </li>
     </ul>

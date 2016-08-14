@@ -9,14 +9,23 @@ export default app => {
 		bindings: {
 			items: '<'
 		},
-		controller: ['$state', function ($state) {
+		controller: /*@ngInject*/ function ($state, $stateParams) {
 
-			if (this.items.length && !$state.is('index.mailbox.letter')) {
-				let item = this.items[0];
-				$state.go('index.mailbox.box', { boxName: item.urlName, boxID: item._id });
-			}
-			
-		}]
+			this.itemClass = item => {
+				return {
+					active: $state.includes('index.mailbox') 
+									&& ($stateParams.boxID == item._id || $stateParams.boxName == item.urlName)
+				}
+			};
+
+			this.$onInit = () => {
+				if (this.items.length && !$state.is('index.mailbox.letter')) {
+					let item = this.items[0];
+					$state.go('index.mailbox.box', { boxName: item.urlName, boxID: item._id });
+				}
+			};
+
+		}
 	})
 
 }
