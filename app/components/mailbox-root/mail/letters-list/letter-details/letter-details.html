@@ -1,1 +1,14 @@
-<pre ng-bind="$ctrl.letter | json"></pre>
+<div class="letter-details">
+	<div class="row subject">
+		<div class="col-xs-12">
+			<p class="lead" ng-bind="$ctrl.letter.subject"></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-2"><b>From</b></div>
+		<div class="col-xs-10" ng-bind="$ctrl.letter.to"></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" ng-bind-html="$ctrl.getLetterBody()">
+	</div>
+</div>
