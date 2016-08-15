@@ -61,6 +61,13 @@ export default app => {
 		loadLetterDetails (letterID) {
 			return this.$http.get(this.baseUrl + '/letters/' + letterID);
 		}
+
+		sendLetter (data) {
+			return this.$http.post(
+				this.baseUrl + '/letters', 
+				angular.extend({ mailbox: '57a6cf806baa8d7d1bfe6406' }, data)
+			);
+		}
 	}
 
 	app.service('MailboxService', MailboxService);
