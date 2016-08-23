@@ -1,6 +1,11 @@
-// 'use strict';
+'use strict';
 
 import angular from 'angular';
+
+if (IS_TEST) {
+	require('angular-mocks/angular-mocks');
+}
+
 import config from './index.config';
 import appComponents from './components';
 import uiRouter from 'angular-ui-router';
