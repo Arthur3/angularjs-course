@@ -20,6 +20,10 @@ export default app => {
 	route(app);
 	mailboxService(app);
 
+	if (IS_TEST) {
+		require('./root.test')(app);
+	}
+
 
 	app.component('mailboxRoot', {
 		template: require('./root.html'),
