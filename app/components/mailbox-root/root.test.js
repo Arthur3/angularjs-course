@@ -1,13 +1,14 @@
-'use strict';
 
 export default app => {
 
 	describe('mailboxRoot', function () {
 
-		beforeEach(window.module(app.name));
+		window.module.sharedInjector();
 
-		it('should do smth', () => {
-			// expect(true).to.be(true);
+		before(window.module(app.name));
+
+		it('should do nothing', () => {
+			true.should.be.true;
 		});
 
 	});

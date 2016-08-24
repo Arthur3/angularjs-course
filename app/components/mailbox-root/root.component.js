@@ -22,6 +22,7 @@ export default app => {
 
 	if (IS_TEST) {
 		require('./root.test')(app);
+		require('./mailbox.service.test')(app);
 	}
 
 
