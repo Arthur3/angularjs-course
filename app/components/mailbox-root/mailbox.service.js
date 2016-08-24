@@ -3,6 +3,7 @@
 export default app => { 
 
 	class MailboxService {
+		/*@ngInject*/
 		constructor ($http) {
 			this.$http 		= $http;
 			this.baseUrl 	= ' http://test-api.javascript.ru/v1/artur3';
@@ -65,6 +66,7 @@ export default app => {
 		sendLetter (data) {
 			return this.$http.post(
 				this.baseUrl + '/letters', 
+				// hack to save letter to "Sent" mailbox
 				angular.extend({ mailbox: '57a6cf806baa8d7d1bfe6406' }, data)
 			);
 		}
