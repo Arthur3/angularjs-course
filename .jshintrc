@@ -9,6 +9,7 @@
     "IS_TEST": true
   },
   "predef": {
-  	"expect": true
+  	"expect": true,
+  	"sinon": true
   }
 }
