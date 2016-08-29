@@ -6,7 +6,7 @@ export default app => {
 		/*@ngInject*/
 		constructor ($http) {
 			this.$http 		= $http;
-			this.baseUrl 	= ' https://test-api.javascript.ru/v1/artur3';
+			this.baseUrl 	= 'https://test-api.javascript.ru/v1/artur3';
 			this.mailboxes 	= [];
 		}
 
